@@ -1,0 +1,22 @@
+body {
+    font-size:14px;
+}
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+
+}
+.header-ul{
+    display: flex;
+    width:100%;
+}
+.header-ul li {
+    flex:1;
+    text-align: center;
+    list-style: none;
+    padding: 1rem;
+}
+.header-ul li a {
+    color: green;
+}
