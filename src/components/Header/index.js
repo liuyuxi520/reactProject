@@ -18,13 +18,13 @@ class Header extends Component {
         return (
             <ul className='header-ul'>
                 <li>
-                    <a onClick={ this.toIndex }>{ nav.index }</a>
+                    <a onClick={ this.toIndex }>{ nav.index } {this.props.name}</a>
                 </li>
                 <li>
-                    <a onClick={ this.toAbout }>{ nav.about }</a>
+                    <a onClick={ this.toAbout }>{ nav.about } {this.props.name}</a>
                 </li>
                 <li>
-                    <a onClick={ this.toMy }>{ nav.my }</a>
+                    <a onClick={ this.toMy }>{ nav.my } {this.props.name}</a>
                 </li>
             </ul>
         )
