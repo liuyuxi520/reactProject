@@ -5,10 +5,16 @@ import React, { Component } from 'react';
 import { footerNav } from '../../config/config';
 import './Footer.css';
 class Footer extends Component {
+    constructor(props){
+        super(props)
+        this.state = { //通过es6类的继承实现时 state的初始化要在constructor中声明
+            whether:true
+        }
+    }
     render(){
         return(
             <section>
-                <FooterNav name={this.props.name} />
+                <FooterNav name={this.state.whether} />
                 <FooterAd info={this.props.info} />
             </section>
         )
