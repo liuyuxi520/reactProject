@@ -3,7 +3,7 @@
  */
 import React, { Component } from 'react';
 import { footerNav } from '../../config/config';
-import './Footer.css';
+import './footer.css';
 class Footer extends Component {
     constructor(props){
         super(props)
@@ -12,10 +12,12 @@ class Footer extends Component {
         }
     }
     render(){
+        const name = this.state.whether?this.props.name:'';
         return(
             <section>
-                <FooterNav name={this.state.whether} />
+                <FooterNav name={name} />
                 <FooterAd info={this.props.info} />
+                <Count />
             </section>
         )
     }
@@ -56,6 +58,28 @@ class FooterAd extends Component {
     render(){
         return(
             <div className='footer-ad'>{this.props.info}</div>
+        )
+    }
+}
+
+class Count extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            count : 0
+        }
+    }
+    handleClick=()=>{
+        this.setState({count : this.state.count+1});    
+    }
+    // alick(){
+    //     this.setState(states => ({
+    //         count : states.count+1
+    //     }));
+    // }
+    render(){
+        return(
+            <p className='number' onClick={this.handleClick}>点我！点击次数为 {this.state.count}</p>
         )
     }
 }
