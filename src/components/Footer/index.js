@@ -68,9 +68,10 @@ class Count extends Component {
         this.state = {
             count : 0
         }
+        this.handleClick = this.handleClick.bind(this);
     }
-    handleClick=()=>{
-        this.setState({count : this.state.count+1});    
+    handleClick(){
+        this.setState(privateState=>({count : privateState.count+1}));    
     }
     // alick(){
     //     this.setState(states => ({
