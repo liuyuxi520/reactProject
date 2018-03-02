@@ -6,7 +6,7 @@ import './Box.css';
 class Square extends Component {
     render(){
         return (
-            <button className="square">{this.props.value}</button>
+            <button className="square" onClick={()=>alert(this.props.value)}>{this.props.value}</button>
         )
     }
 }
