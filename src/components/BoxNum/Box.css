@@ -22,3 +22,18 @@
 .row-square:nth-child(1) .square{
     margin-top:auto;
 }
+.squareInput {
+    width: 200px;
+    height: 28px;
+    border: 1px solid #999;
+}
+.squareBtn {
+    width: 40px;
+    height: 28px;
+    border:1px solid #999;
+    background: none;
+    color: #999;
+}
+.highlight {
+    color: red;
+}

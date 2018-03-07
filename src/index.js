@@ -6,10 +6,9 @@ import Header from './components/Header/index';
 import Footer from './components/Footer/index';
 import Board from './components/BoxNum/index';
 import registerServiceWorker from './registerServiceWorker';
-import { nav } from './config/config';
+import { nav,footerNav } from './config/config';
 ReactDOM.render(<Header name='lyx' nav={nav} />, document.getElementById('reactNav'));
 ReactDOM.render(<App />, document.getElementById('root'));
-ReactDOM.render(<Footer name='react' info='lyxReact'/>, document.getElementById('reactFooter'));
+ReactDOM.render(<Footer name='react' info='lyxReact' footerNav={footerNav} />, document.getElementById('reactFooter'));
 ReactDOM.render(<Board status='请玩九宫格' onClick={value => alert(value)} />, document.getElementById('reactBox'));
-
 registerServiceWorker();

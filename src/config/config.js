@@ -3,7 +3,7 @@
  */
 export const nav = [ 
     {
-        name: '首页',
+        name: '首页t',
         path: '/index'
     },
     {
@@ -15,9 +15,21 @@ export const nav = [
         path: '/my'
     },
 ];
-export const footerNav = {
-    index : '首页',
-    about : '关于我们',
-    my : '我的',
-    news : '新闻'
-};
+export const footerNav = [
+    {
+        name : '首页f',
+        path : '/'
+    },
+    {
+        name : '关于我们',
+        path : '/about'
+    },
+    {
+        name : '我的',
+        path : '/my'
+    },
+    {
+        name : '新闻',
+        path : '/news'
+    },
+];

@@ -8,8 +8,7 @@ class Opacity extends Component {
     }
     componentDidMount(){
         this.timer=setInterval(()=>{
-            this.props.interDo();
-            var opacity = this.state.opacity;
+            let {opacity} = this.state;
             opacity -=0.05;
             if(opacity<0.1){
                 opacity = 1;
@@ -17,14 +16,17 @@ class Opacity extends Component {
             this.setState({
                 opacity
             });
+            this.props.interDo && this.props.interDo();            
         },200);
     }
     componentWillUnmount(){
         clearInterval(this.timer);
     }
     render(){
+        let {opacity} = this.state;
+        let {name} = this.props;
         return(
-            <div style={{opacity:this.state.opacity}}>hello {this.props.name}</div>
+            <div style={{opacity}}>hello {name}</div>
         )
     }
     

@@ -2,54 +2,44 @@
  * Created by liufeifeng on 2/8/18.
  */
 import React, { Component } from 'react';
-import { footerNav } from '../../config/config';
 import './Footer.css';
 class Footer extends Component {
     render(){
+        const {footerNav,name,info} = this.props;
         return(
             <section>
-                <FooterNav name={this.props.name} />
-                <FooterAd info={this.props.info} />
+                <FooterNav footerNav={footerNav} />
+                <FooterAd info={info} />
             </section>
         )
     }
-}
+} 
 class FooterNav extends Component {
-    toIndex(){
-        window.location.href = '/';
-    }
-    toAbout(){
-        window.location.href = '/about/';
-    }
-    toNews(){
-        window.location.href = '/news/';
-    }
-    toMy(){
-        window.location.href = '/my/';
+    toPath(path){
+        window.location.href = path;
     }
     render(){
+        const {footerNav} = this.props;
         return(
             <ul className='footer-ul'>
-                <li>
-                    <a onClick={ this.toIndex }>{ footerNav.index } {this.props.name}</a>
-                </li>
-                <li>
-                    <a onClick={ this.toAbout }>{ footerNav.about } {this.props.name}</a>
-                </li>
-                <li>
-                    <a onClick={ this.toNews }>{ footerNav.news } {this.props.name}</a>
-                </li>
-                <li>
-                    <a onClick={ this.toMy }>{ footerNav.my } {this.props.name}</a>
-                </li>
+                {
+                   footerNav.map((item,i) => (
+                    <li key={i}>
+                        {/* <a onClick={ this.toPath(item.path) }>{ item.name }</a> */}
+                        <a onClick={ this.toPath.bind(this, item.path) }>{ item.name }</a>
+                    </li>
+                   )) 
+                }
+                
             </ul>
         )
     }
 }
 class FooterAd extends Component {
     render(){
+        const {info} = this.props;
         return(
-            <div className='footer-ad'>{this.props.info}</div>
+            <div className='footer-ad'>{info}</div>
         )
     }
 }
