@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import InputBoil from '../Temperature/index';
+
 import './Select.css';
 class Selects extends Component {
     constructor(props){
@@ -17,16 +19,20 @@ class Selects extends Component {
         const { value } = this.state;
         const {data} = this.props;        
         return(
-            <select className='reactSelect' defaultValue={this.state.value} onChange={this.handleChange}>
-                {
-                    // if(data && data.length){
-                    data && data.length>0 &&
-                    data.map((item,index) => (
-                        item === value ?(<option key={index} selected value={item}>{item}</option>):(<option key={index} value={item}>{item}</option>)
-                    ))
-                    // }       
-                }
-            </select>
+            <div>
+                <select className='reactSelect' defaultValue={this.state.value} onChange={this.handleChange}>
+                    {
+                        // if(data && data.length){
+                        data && data.length>0 &&
+                        data.map((item,index) => (
+                            item === value ?(<option key={index} selected value={item}>{item}</option>):(<option key={index} value={item}>{item}</option>)
+                        ))
+                        // }
+                    }
+                </select>
+                <InputBoil />
+            </div>
+
         )
 
     }
