@@ -23,25 +23,4 @@ class Header extends Component {
     }
 }
 
-
-// class Header extends Component {
-//     toNextPath = (path) => {
-//         window.location.href = path;
-//     }
-//     render(){
-//         const { nav, name } = this.props;
-//         return (
-//             <ul className='header-ul'>
-//             {
-//                 nav.map(item => (
-//                     <li>
-//                         <a onClick={ this.toNextPath.bind(this, item.path) }>{ item.name } {name}</a>
-//                     </li>
-//                 ))
-//             }
-//             </ul>
-//         )
-//     }
-// }
-
 export default Header;
