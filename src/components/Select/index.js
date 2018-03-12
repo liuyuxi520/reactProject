@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import InputBoil from '../Temperature/index';
+
 import './Select.css';
 class Selects extends Component {
     constructor(props){

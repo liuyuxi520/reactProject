@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import default from '../Footer/index';
+import  './Temperature.css';
 
 const Boiling = (props) => {
     if(props.temp > 100){
@@ -8,8 +8,9 @@ const Boiling = (props) => {
     return <p>The water will not boil.</p>
 };
 
-class InputBoil extends Component {
+class InputBoil  extends Component {
     constructor(props){
+        super(props);
         this.state = {
             temp : 0
         };
@@ -27,4 +28,4 @@ class InputBoil extends Component {
         )
     }
 }
-export default InputBoil
+export default InputBoil;
