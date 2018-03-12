@@ -4,7 +4,7 @@ class Selects extends Component {
     constructor(props){
         super(props)
         this.state = {
-            value : this.props.defaultVal
+            value : props.defaultVal
         };
         this.handleChange = this.handleChange.bind(this);
     }
@@ -15,16 +15,12 @@ class Selects extends Component {
     }
     render(){
         const { value } = this.state;
-        const {data} = this.props;        
+        const {data} = this.props;
         return(
-            <select className='reactSelect' defaultValue={this.state.value} onChange={this.handleChange}>
+            <select className='reactSelect' defaultValue={value} onChange={this.handleChange}>
                 {
-                    // if(data && data.length){
-                    data && data.length>0 &&
-                    data.map((item,index) => (
-                        item === value ?(<option key={index} selected value={item}>{item}</option>):(<option key={index} value={item}>{item}</option>)
-                    ))
-                    // }       
+                    data && data.length &&
+                    data.map((item,index) => (<option key={index} selected={item === value} value={item}>{item}</option>))
                 }
             </select>
         )
